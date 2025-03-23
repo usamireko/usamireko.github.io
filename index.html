@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Usami Sumireko´s Portfolio</title>
+  <title>Usamireko´s Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
@@ -18,141 +18,139 @@
 
     body {
       font-family: 'Quicksand', sans-serif;
-      transition: background-color 0.3s, color 0.3s; 
+      transition: background-color 0.3s, color 0.3s;
       line-height: 1.6;
       padding: 20px;
       background: linear-gradient(135deg, #f5f7fa, #c3cfe2); 
       color: #333;
     }
 
+  
     body.dark-mode {
-      background: linear-gradient(135deg, #36454f, #1f2937); 
-      color: #ddd;
+      background: #121212;
+      color: #e0e0e0;
     }
-    body.dark-mode header h1{
-        color: #dda0dd;
-        text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7);
+    body.dark-mode header h1 {
+      color: #bb86fc;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7);
     }
     body.dark-mode header p {
-        color: #bbb;
+      color: #b0b0b0;
     }
-    body.dark-mode section h2{
-        color: #daa8d9;
-        border-bottom: 2px dashed #daa8d9;
+    body.dark-mode main {
+      background: #1e1e1e;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     }
-    body.dark-mode main{
-        background: rgba(0, 0, 0, 0.2);
-        box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+    body.dark-mode section h2 {
+      color: #bb86fc;
+      border-bottom: 2px dashed #bb86fc;
     }
-    body.dark-mode section ul li{
-        background: #444;
-        color: #eee;
+    body.dark-mode section p {
+      color: #d0d0d0;
     }
-    body.dark-mode section ul li:hover{
-        background: #555;
+    body.dark-mode section ul li {
+      background: #2c2c2c;
+      color: #e0e0e0;
     }
-    body.dark-mode footer{
-        color: #aaa;
-        border-top: 1px solid #444;
+    body.dark-mode section ul li:hover {
+      background: #3a3a3a;
     }
     body.dark-mode a {
-        color: #ff79c6;
+      color: #03dac6;
     }
     body.dark-mode a:hover {
-        color: #bd93f9;
+      color: #018786;
     }
-    
     body.dark-mode .btn {
-      background: #e085b7;
-      color: #fff; 
+      background: #03dac6;
+      color: #121212;
     }
-
     body.dark-mode .btn:hover {
-      background: #ff79c6;
-      
+      background: #018786;
       color: #fff;
     }
-    body.dark-mode #dark-mode-toggle{
-        background: #e085b7;
-        color: #fff; 
+    body.dark-mode #dark-mode-toggle {
+      background: #03dac6;
+      color: #121212;
     }
-    body.dark-mode #dark-mode-toggle:hover{
-        background: #ff79c6;
+    body.dark-mode #dark-mode-toggle:hover {
+      background: #018786;
     }
+    body.dark-mode footer {
+      color: #a0a0a0;
+      border-top: 1px solid #2c2c2c;
+    }
+
+
     header {
       text-align: center;
       padding: 30px 0;
-      position: relative; 
+      position: relative;
     }
-
     header h1 {
       font-family: 'Pacifico', cursive;
       font-size: 3em;
-      color: #e98fb6; 
-      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2); 
+      color: #e98fb6;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
       margin-bottom: 10px;
     }
-
     header p {
       font-size: 1.2em;
       color: #555;
     }
 
+
     main {
       max-width: 800px;
       margin: 20px auto;
-      background: rgba(255, 255, 255, 0.9); 
+      background: rgba(255, 255, 255, 0.9);
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
 
+
     section {
       margin-bottom: 30px;
     }
-
     section h2 {
       font-family: 'Pacifico', cursive;
       font-size: 2em;
-      color: #e085b7; 
+      color: #e085b7;
       margin-bottom: 15px;
       border-bottom: 2px dashed #e085b7;
       display: inline-block;
       padding-bottom: 5px;
     }
-
     section p {
       margin-bottom: 15px;
     }
-
     section ul {
       list-style: none;
       padding-left: 0;
     }
-
     section ul li {
-      background: #f2e1eb; 
+      background: #f2e1eb;
       margin-bottom: 10px;
       padding: 10px 15px;
       border-radius: 10px;
       transition: background 0.3s;
     }
-
     section ul li:hover {
-      background: #e6d1dc; 
+      background: #e6d1dc;
     }
 
+
     a {
-      color: #e0409a; 
+      color: #e0409a;
       text-decoration: none;
       transition: color 0.3s;
     }
-
     a:hover {
-      color: #c72587; 
+      color: #c72587;
     }
 
-    
+ 
     .btn {
       display: inline-block;
       padding: 10px 20px;
@@ -166,33 +164,33 @@
       transition: background 0.3s, transform 0.2s;
       text-decoration: none;
     }
-
     .btn:hover {
       background: #e0409a;
       transform: translateY(-3px);
     }
 
-  
+
     #dark-mode-toggle {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: #e085b7;
-        color: #fff;
-        border: none;
-        padding: 8px 12px;
-        border-radius: 50%;  
-        cursor: pointer;
-        transition: background-color 0.3s;
-        font-size: 1rem;
-        line-height: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #e085b7;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 1rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    #dark-mode-toggle:hover{
-        background: #e0409a;
+    #dark-mode-toggle:hover {
+      background: #e0409a;
     }
+
 
     footer {
       text-align: center;
@@ -205,14 +203,14 @@
 </head>
 <body>
   <header>
-    <h1>Sumireko Usami</h1>
+    <h1>Usamireko</h1>
     <p>Yet another human from the Outside World</p>
     <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙</button>
   </header>
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>Hello! I’m Sumireko Usami (Also known as Lin in some places). I am an university student with a passion on computers, AI, vocal synthesizers, etc. I love exploring the limits of creativity and technology. Welcome to my portfolio!</p>
+      <p>Hello! I’m Usamireko (Also known as Lin in some places). I am a university student with a passion for computers, AI, vocal synthesizers, etc. I love exploring the limits of creativity and technology. Welcome to my portfolio!</p>
     </section>
     <section id="projects">
       <h2>Featured Projects</h2>
@@ -239,21 +237,17 @@
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const body = document.body;
 
-    
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
 
-    
     if (isDarkMode) {
       body.classList.add('dark-mode');
-      darkModeToggle.textContent = '☀️'; 
+      darkModeToggle.textContent = '☀️';
     }
 
     darkModeToggle.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
       const isDarkModeNow = body.classList.contains('dark-mode');
-      localStorage.setItem('darkMode', isDarkModeNow); 
-
-      
+      localStorage.setItem('darkMode', isDarkModeNow);
       darkModeToggle.textContent = isDarkModeNow ? '☀️' : '🌙';
     });
   </script>
