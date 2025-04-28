@@ -3,203 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Usamireko's Portfolio - AI, Technology, and Vocal Synthesizer Enthusiast">
   <title>Usamireko´s Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    /*  When I started coding this, only me and God knew how this worked, now only God knows! */
-    /* Hours spent at debugging this due to Dark Mode: 2 */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Quicksand', sans-serif;
-      transition: background-color 0.3s, color 0.3s;
-      line-height: 1.6;
-      padding: 20px;
-      background: linear-gradient(135deg, #f5f7fa, #c3cfe2); 
-      color: #333;
-    }
-
-  
-    body.dark-mode {
-      background: #121212;
-      color: #e0e0e0;
-    }
-    body.dark-mode header h1 {
-      color: #bb86fc;
-      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7);
-    }
-    body.dark-mode header p {
-      color: #b0b0b0;
-    }
-    body.dark-mode main {
-      background: #1e1e1e;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    }
-    body.dark-mode section h2 {
-      color: #bb86fc;
-      border-bottom: 2px dashed #bb86fc;
-    }
-    body.dark-mode section p {
-      color: #d0d0d0;
-    }
-    body.dark-mode section ul li {
-      background: #2c2c2c;
-      color: #e0e0e0;
-    }
-    body.dark-mode section ul li:hover {
-      background: #3a3a3a;
-    }
-    body.dark-mode a {
-      color: #03dac6;
-    }
-    body.dark-mode a:hover {
-      color: #018786;
-    }
-    body.dark-mode .btn {
-      background: #03dac6;
-      color: #121212;
-    }
-    body.dark-mode .btn:hover {
-      background: #018786;
-      color: #fff;
-    }
-    body.dark-mode #dark-mode-toggle {
-      background: #03dac6;
-      color: #121212;
-    }
-    body.dark-mode #dark-mode-toggle:hover {
-      background: #018786;
-    }
-    body.dark-mode footer {
-      color: #a0a0a0;
-      border-top: 1px solid #2c2c2c;
-    }
-
-
-    header {
-      text-align: center;
-      padding: 30px 0;
-      position: relative;
-    }
-    header h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 3em;
-      color: #e98fb6;
-      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2em;
-      color: #555;
-    }
-
-
-    main {
-      max-width: 800px;
-      margin: 20px auto;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    }
-
-
-    section {
-      margin-bottom: 30px;
-    }
-    section h2 {
-      font-family: 'Pacifico', cursive;
-      font-size: 2em;
-      color: #e085b7;
-      margin-bottom: 15px;
-      border-bottom: 2px dashed #e085b7;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-    section p {
-      margin-bottom: 15px;
-    }
-    section ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    section ul li {
-      background: #f2e1eb;
-      margin-bottom: 10px;
-      padding: 10px 15px;
-      border-radius: 10px;
-      transition: background 0.3s;
-    }
-    section ul li:hover {
-      background: #e6d1dc;
-    }
-
-
-    a {
-      color: #e0409a;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    a:hover {
-      color: #c72587;
-    }
-
- 
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #e085b7;
-      color: #fff;
-      border: none;
-      border-radius: 30px;
-      font-family: 'Quicksand', sans-serif;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
-      text-decoration: none;
-    }
-    .btn:hover {
-      background: #e0409a;
-      transform: translateY(-3px);
-    }
-
-
-    #dark-mode-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #e085b7;
-      color: #fff;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      font-size: 1rem;
-      line-height: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    #dark-mode-toggle:hover {
-      background: #e0409a;
-    }
-
-
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #777;
-      padding: 20px 0;
-      border-top: 1px solid #eee;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -210,23 +20,84 @@
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>Hello! I’m Usamireko (Also known as Lin in some places). I am a university student with a passion for computers, AI, vocal synthesizers, etc. I love exploring the limits of creativity and technology. Welcome to my portfolio!</p>
+      <p>Hello! I'm Usamireko (Also known as Lin in some places). I am a university student with a passion for computers, AI, vocal synthesizers, etc. I love exploring the limits of creativity and technology. Welcome to my portfolio!</p>
     </section>
-    <section id="projects">
-      <h2>Featured Projects</h2>
-      <ul>
-        <li><a href="https://github.com/usamireko/StableTTS-Training-Colab" target="_blank" rel="noopener noreferrer">StableTTS Training On Colab</a></li>
-        <li><a href="https://github.com/usamireko/HiFiPLN_Colab" target="_blank" rel="noopener noreferrer">HiFiPLN_Colab</a></li>
-        <li><a href="https://github.com/usamireko/DiffusionDenoiser" target="_blank" rel="noopener noreferrer">DiffusionDenoiser</a></li>
-        <li><a href="https://github.com/usamireko/Non-English-Tacotron-2-Training-Notebook" target="_blank" rel="noopener noreferrer">Non-English-Tacotron-2-Training-Notebook</a></li>
-        <li><a href="https://github.com/usamireko/DiffSinger_colab_notebook_MLo7" target="_blank" rel="noopener noreferrer">Diffsinger Notebooks for Colab</a></li>
-        <li><a href="https://github.com/usamireko/YuE-exllamav2-Colab" target="_blank" rel="noopener noreferrer">YuE-exllamav2-Colab</a></li>
-      </ul>
+
+    <section id="skills">
+      <h2>Skills & Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>AI & Machine Learning</h3>
+          <ul>
+            <li>Neural Networks</li>
+            <li>Singing Voice Synthesis</li>
+            <li>Text-to-Speech</li>
+            <li>Generative AI</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Development</h3>
+          <ul>
+            <li>Python</li>
+            <li>Basic Web Development</li>
+            <li>Usage of OpenAI-like APIs</li>
+            <li>C#</li>
+          </ul>
+        </div>
+      </div>
     </section>
+
+    <section id="showcase">
+      <h2>AI Showcase</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>StableTTS Training</h3>
+          <p>A somewhat comprehensive guide and implementation for training StableTTS models on Google Colab.</p>
+          <a href="https://github.com/usamireko/StableTTS-Training-Colab" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>HiFiPLN Colab</h3>
+          <p>Google Colab notebook for HiFiPLN vocoder fine-tuning.</p>
+          <a href="https://github.com/usamireko/HiFiPLN_Colab" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>DiffusionDenoiser</h3>
+          <p>Audio denoising using Fish Diffusion.</p>
+          <a href="https://github.com/usamireko/DiffusionDenoiser" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>Non-English Tacotron-2</h3>
+          <p>Training notebook for Tacotron-2 models with non-English language support.</p>
+          <a href="https://github.com/usamireko/Non-English-Tacotron-2-Training-Notebook" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>DiffSinger Colab</h3>
+          <p>Fork of the MLo7´s DiffSinger Colab notebook with some modifications.</p>
+          <a href="https://github.com/usamireko/DiffSinger_colab_notebook_MLo7" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>YuE-exllamav2</h3>
+          <p>Optimized implementation of multimodal-art-projection/YuE in exllamav2 now with a Colab notebook.</p>
+          <a href="https://github.com/usamireko/YuE-exllamav2-Colab" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+      </div>
+    </section>
+
     <section id="contact">
       <h2>Contact</h2>
-      <p>Follow me on <a href="https://github.com/usamireko" target="_blank" rel="noopener noreferrer">GitHub!</a> or send me a message on <a href="https://x.com/_usamireko">X!</a>.</p>
-      <p><a class="btn" href="mailto:usumireko@proton.me">Say Hello!</a></p>
+      <div class="social-links">
+        <a href="https://github.com/usamireko" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://x.com/_usamireko" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="mailto:usumireko@proton.me" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <p class="contact-text">Feel free to reach out for collaborations or just to say hello!</p>
+      <a class="btn" href="mailto:usumireko@proton.me">Say Hello!</a>
     </section>
   </main>
   <footer>
@@ -234,21 +105,36 @@
   </footer>
 
   <script>
+    // Dark Mode Toggle
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const body = document.body;
-
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
 
     if (isDarkMode) {
-      body.classList.add('dark-mode');
+      body.setAttribute('data-theme', 'dark');
       darkModeToggle.textContent = '☀️';
     }
 
     darkModeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      const isDarkModeNow = body.classList.contains('dark-mode');
-      localStorage.setItem('darkMode', isDarkModeNow);
-      darkModeToggle.textContent = isDarkModeNow ? '☀️' : '🌙';
+      const isDark = body.getAttribute('data-theme') === 'dark';
+      body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('darkMode', !isDark);
+      darkModeToggle.textContent = isDark ? '🌙' : '☀️';
+    });
+
+    // Scroll Animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
     });
   </script>
 </body>
