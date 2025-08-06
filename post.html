@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post - Usamireko's Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="blog-styles.css">
+</head>
+<body>
+  <header id="post-header">
+    <!-- Header content will be dynamically generated -->
+    <a href="blog.html" class="btn">Back to Blog</a>
+  </header>
+
+  <main>
+    <article class="blog-post">
+      <div id="post-content" class="blog-post-content">
+        <!-- Markdown content will be rendered here -->
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sumireko Usami. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    const body = document.body;
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    if (isDarkMode) {
+      body.setAttribute('data-theme', 'dark');
+    }
+
+    // Dynamically load blog post content
+    document.addEventListener('DOMContentLoaded', () => {
+      const postContent = document.getElementById('post-content');
+      const postHeader = document.getElementById('post-header');
+      
+      const urlParams = new URLSearchParams(window.location.search);
+      const postFile = urlParams.get('p');
+
+      if (postFile) {
+        const postPath = `posts/${postFile}.md`;
+        fetch(postPath)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Post not found');
+            }
+            return response.text();
+          })
+          .then(text => {
+            // Extract H1 from markdown to use as the page title
+            const titleMatch = text.match(/^# (.*)/);
+            if (titleMatch) {
+              const title = titleMatch[1];
+              document.title = `${title} - Usamireko's Blog`;
+              const headerContent = `<h1>${title}</h1>`;
+              postHeader.insertAdjacentHTML('afterbegin', headerContent);
+            }
+            postContent.innerHTML = marked.parse(text);
+          })
+          .catch(error => {
+            postContent.innerHTML = '<p>Error: Post not found. Please check the URL.</p>';
+          });
+      } else {
+        postContent.innerHTML = '<p>No post specified. Please select a post from the blog page.</p>';
+      }
+    });
+  </script>
+</body>
+</html>

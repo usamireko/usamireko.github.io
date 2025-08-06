@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Usamireko's Blog">
+  <title>Usamireko's Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="blog-styles.css">
+
+</head>
+<body>
+  <header>
+    <h1>My Blog</h1>
+    <p>A collection of my thoughts, logs, etc.</p>
+    <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙</button>
+    <a href="index.html" class="btn">Back to Home</a>
+  </header>
+
+  <main>
+    <section class="blog-section visible">
+      <h2>All Posts</h2>
+      <div id="blog-posts-container">
+        <!-- Blog posts will be dynamically loaded here -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sumireko Usami. All rights reserved.</p>
+  </footer>
+
+  <script>
+  
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+    if (isDarkMode) {
+      body.setAttribute('data-theme', 'dark');
+      darkModeToggle.textContent = '☀️';
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+      const isDark = body.getAttribute('data-theme') === 'dark';
+      body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('darkMode', !isDark);
+      darkModeToggle.textContent = isDark ? '🌙' : '☀️';
+    });
+
+    // Dynamically load blog posts
+    document.addEventListener('DOMContentLoaded', () => {
+      const postsContainer = document.getElementById('blog-posts-container');
+      
+      if (!postsContainer) {
+        return;
+      }
+      
+      const posts = [
+        {
+          title: 'Test',
+          date: 'August 5, 2025',
+          summary: 'Test of different stuff.',
+          file: 'second_post'
+        },
+        {
+          title: 'My First Blog Post',
+          date: 'August 5, 2025',
+          summary: 'Does this even work?',
+          file: 'first_post'
+        }
+      ];
+
+      if (posts.length === 0) {
+        postsContainer.innerHTML = '<p>No posts yet. Stay tuned!</p>';
+        return;
+      }
+
+      posts.forEach((post, index) => {
+        const postCard = document.createElement('div');
+        postCard.className = 'blog-post-card';
+        postCard.innerHTML = `
+          <h3>${post.title}</h3>
+          <p class="post-meta">${post.date}</p>
+          <p>${post.summary}</p>
+          <a href="post.html?p=${post.file}" class="btn">Read More</a>
+        `;
+        postsContainer.appendChild(postCard);
+      });
+    });
+  </script>
+</body>
+</html>
