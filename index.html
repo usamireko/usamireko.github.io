@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="blog-styles.css">
+
   <style>
     .loading-screen {
       position: fixed;
@@ -39,49 +39,7 @@
       to { transform: rotate(360deg); }
     }
 
-    .initial-selection {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--bg-color);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.5s ease;
-    }
 
-    .initial-selection.active {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    .selection-buttons {
-      display: flex;
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .selection-btn {
-      padding: 15px 30px;
-      font-size: 1.2em;
-      border: none;
-      border-radius: 30px;
-      background: var(--primary-color);
-      color: white;
-      cursor: pointer;
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-
-    .selection-btn:hover {
-      transform: translateY(-3px);
-      background: var(--primary-dark);
-    }
   </style>
 </head>
 <body>
@@ -268,11 +226,8 @@
   </footer>
 
   <script>
-    // Loading Screen
     window.addEventListener('load', () => {
       const loadingScreen = document.querySelector('.loading-screen');
-      
-      // Hide loading screen after 1.5 seconds
       setTimeout(() => {
         loadingScreen.style.opacity = '0';
         setTimeout(() => {
@@ -281,25 +236,20 @@
       }, 1500);
     });
 
-    // Tab Switching
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
 
     tabButtons.forEach(button => {
       button.addEventListener('click', () => {
         if(button.getAttribute('data-tab') === 'blog') return;
-        // Remove active class from all buttons and contents
         tabButtons.forEach(btn => btn.classList.remove('active'));
         tabContents.forEach(content => content.classList.remove('active'));
-
-        // Add active class to clicked button and corresponding content
         button.classList.add('active');
         const tabId = button.getAttribute('data-tab');
         document.getElementById(tabId).classList.add('active');
       });
     });
 
-    // Dark Mode Toggle
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const body = document.body;
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
@@ -316,7 +266,6 @@
       darkModeToggle.textContent = isDark ? '🌙' : '☀️';
     });
 
-    // Scroll Animation
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {

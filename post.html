@@ -13,14 +13,13 @@
 </head>
 <body>
   <header id="post-header">
-    <!-- Header content will be dynamically generated -->
+    <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙</button>
     <a href="blog.html" class="btn">Back to Blog</a>
   </header>
 
   <main>
     <article class="blog-post">
       <div id="post-content" class="blog-post-content">
-        <!-- Markdown content will be rendered here -->
       </div>
     </article>
   </main>
@@ -33,11 +32,21 @@
   <script>
     const body = document.body;
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
     if (isDarkMode) {
       body.setAttribute('data-theme', 'dark');
     }
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    if (darkModeToggle) {
+      darkModeToggle.textContent = isDarkMode ? '☀️' : '🌙';
+      darkModeToggle.addEventListener('click', () => {
+        const isDark = body.getAttribute('data-theme') === 'dark';
+        body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        localStorage.setItem('darkMode', !isDark);
+        darkModeToggle.textContent = isDark ? '🌙' : '☀️';
+      });
+    }
 
-    // Dynamically load blog post content
     document.addEventListener('DOMContentLoaded', () => {
       const postContent = document.getElementById('post-content');
       const postHeader = document.getElementById('post-header');
@@ -55,12 +64,11 @@
             return response.text();
           })
           .then(text => {
-            // Extract H1 from markdown to use as the page title
             const titleMatch = text.match(/^# (.*)/);
             if (titleMatch) {
               const title = titleMatch[1];
               document.title = `${title} - Usamireko's Blog`;
-              const headerContent = `<h1>${title}</h1>`;
+              const headerContent = `<h1>Usamireko</h1>`;
               postHeader.insertAdjacentHTML('afterbegin', headerContent);
             }
             postContent.innerHTML = marked.parse(text);
